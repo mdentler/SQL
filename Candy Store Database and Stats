@@ -1,0 +1,29 @@
+--Create a candy store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, quantity INTEGER, popularity INTEGER);
+
+INSERT INTO store VALUES 
+(1, "milky way", 6, 8, 6),
+(2, "hersheys", 5, 5, 9),
+(3, "skittles", 6, 9, 8),
+(4, "jolly rancher", 4, 10, 5),
+(5, "almond joy", 4, 4, 3),
+(6, "butterfinger", 5, 8, 5),
+(7, "kitkat", 5, 6, 9),
+(8, "reeses cups", 6, 12, 10),
+(9, "reeses pieces", 4, 5, 4),
+(10, "sweeettarts", 5, 4, 6),
+(11, "snow caps", 4, 5, 4),
+(12, "snickers", 6, 8, 8),
+(13, "crunch", 4, 3, 6),
+(14, "m&m", 4, 10, 7),
+(15, "kinder bar", 3, 14, 7);
+
+--Display database ordered by price
+SELECT * FROM store ORDER BY price;
+
+--Which items need to be put on order?
+SELECT * FROM store WHERE quantity < 8 ORDER BY quantity;
+
+--What are the top 5 popular products?
+SELECT * FROM store ORDER BY popularity desc LIMIT 5;
